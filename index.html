@@ -23,7 +23,6 @@ Cambios de esta version frente a la anterior:
 - El CTA "Necesito personal" ahora va primero y en color dorado (antes era "Busco trabajo").
 - Se agrego una barra de 4 insignias de confianza (despliegue 24-48h, OSHA, E-Verify/I-9, gerente de cuenta dedicado) tomadas tal cual del Capability Statement oficial.
 - Se agrego un bloque de "Alertas de disponibilidad" con boton de suscripcion por correo (mailto). No es un CRM real: solo abre el cliente de correo del visitante. Si luego conectas Mailchimp/Klaviyo en Linktree, se puede reemplazar por ese enlace.
-- Se agrego una nota de "Proveedor registrado: SAM.gov · NC eVP · City of Charlotte · Mecklenburg County · CMS" debajo del link de Gobierno. Se agregaron los iconos reales de cada red social (antes eran iconos genericos).
 
 Este archivo se puede abrir directamente en un navegador.
 Para editarlo, abre el archivo con un editor de texto y guarda como UTF-8.
@@ -80,6 +79,18 @@ Las fuentes y los iconos se cargan de proveedores publicos cuando hay internet.
     #lv-link-preview .lv-link-copy strong { display: block; font-size: 15px; font-weight: 600; }
     #lv-link-preview .lv-link-copy span { display: block; font-size: 11px; margin-top: 2px; }
     #lv-link-preview .lv-arrow { width: 16px; height: 16px; flex: 0 0 16px; }
+    #lv-link-preview .lv-jobs-section { margin-top: 19px; padding-top: 20px; border-top: 1px solid #ffffff21; }
+    #lv-link-preview .lv-jobs-title { margin: 0 0 13px; color: var(--lv-soft); font-size: 11px; font-weight: 500; text-align: center; }
+    #lv-link-preview .lv-jobs-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px; }
+    #lv-link-preview .lv-job-card { display: flex; flex-direction: column; border-radius: 13px; overflow: hidden; background: var(--lv-panel); text-decoration: none; color: var(--lv-white); transition: transform .15s ease; }
+    #lv-link-preview .lv-job-card:hover { transform: translateY(-2px); background: var(--lv-panel-hover); }
+    #lv-link-preview .lv-job-card img { width: 100%; aspect-ratio: 1 / 1; object-fit: cover; display: block; }
+    #lv-link-preview .lv-job-info { display: block; padding: 9px 10px 11px; }
+    #lv-link-preview .lv-job-title { display: block; font-size: 12px; font-weight: 600; line-height: 1.25; margin-bottom: 3px; }
+    #lv-link-preview .lv-job-pay { display: block; font-size: 11px; color: var(--lv-gold); font-weight: 600; }
+    #lv-link-preview .lv-jobs-more { display: flex; align-items: center; justify-content: center; gap: 6px; margin-top: 11px; padding: 12px; border-radius: 10px; border: 1px solid #ffffff35; color: var(--lv-white); text-decoration: none; font-size: 12px; font-weight: 500; }
+    #lv-link-preview .lv-jobs-more:hover { background: #ffffff10; }
+    #lv-link-preview .lv-jobs-more i { width: 13px; height: 13px; }
     #lv-link-preview .lv-help { display: flex; align-items: center; justify-content: space-between; gap: 10px; margin-top: 17px; padding: 15px 0 18px; border-bottom: 1px solid #ffffff21; }
     #lv-link-preview .lv-help p { flex: 1; min-width: 0; margin: 0; font-size: 11px; color: var(--lv-soft); }
     #lv-link-preview .lv-help p strong { display: block; color: var(--lv-white); font-weight: 500; font-size: 12px; }
@@ -109,7 +120,7 @@ Las fuentes y los iconos se cargan de proveedores publicos cuando hay internet.
     #lv-link-preview .lv-footer a { color: inherit; text-decoration: none; }
     @media (max-width: 360px) { #lv-link-preview { padding: 10px 0; } #lv-link-preview .lv-screen { padding: 20px; border-radius: 22px; } #lv-link-preview .lv-trust { grid-template-columns: 1fr; } }
     @media (pointer: coarse) { #lv-link-preview .lv-language-select { min-height: 44px; font-size: 16px; } #lv-link-preview .lv-language-picker { width: 174px; } #lv-link-preview .lv-call { min-height: 44px; } }
-    @media (prefers-reduced-motion: reduce) { #lv-link-preview .lv-link { transition: none; } #lv-link-preview .lv-link:hover { transform: none; } }
+    @media (prefers-reduced-motion: reduce) { #lv-link-preview .lv-link, #lv-link-preview .lv-job-card { transition: none; } #lv-link-preview .lv-link:hover, #lv-link-preview .lv-job-card:hover { transform: none; } }
   </style>
   <article class="lv-screen" lang="en" aria-label="LEVEILLE Staffing">
     <div class="lv-top">
@@ -148,6 +159,36 @@ Las fuentes y los iconos se cargan de proveedores publicos cuando hay internet.
         <i class="lv-arrow" data-lucide="arrow-up-right" aria-hidden="true"></i>
       </a>
     </nav>
+    <section class="lv-jobs-section" aria-labelledby="lv-jobs-heading">
+      <h3 class="lv-jobs-title" id="lv-jobs-heading" data-text="jobsTitle">Open Positions</h3>
+      <nav class="lv-jobs-grid" aria-label="Open positions">
+        <a class="lv-job-card" href="https://leveillestaffing.com/careers/apply?job=job-001" target="_blank" rel="noopener noreferrer" aria-label="Apply: Warehouse Associate, $17–$19/hr">
+          <img src="job-001.jpg" alt="" loading="lazy">
+          <span class="lv-job-info"><strong class="lv-job-title">Warehouse Associate</strong><span class="lv-job-pay">$17–$19/hr</span></span>
+        </a>
+        <a class="lv-job-card" href="https://leveillestaffing.com/careers/apply?job=job-008" target="_blank" rel="noopener noreferrer" aria-label="Apply: Spot Welder, $17/hr">
+          <img src="job-008.jpg" alt="" loading="lazy">
+          <span class="lv-job-info"><strong class="lv-job-title">Spot Welder</strong><span class="lv-job-pay">$17/hr</span></span>
+        </a>
+        <a class="lv-job-card" href="https://leveillestaffing.com/careers/apply?job=job-013" target="_blank" rel="noopener noreferrer" aria-label="Apply: Powder Coat Painter, $17/hr">
+          <img src="job-013.jpg" alt="" loading="lazy">
+          <span class="lv-job-info"><strong class="lv-job-title">Powder Coat Painter</strong><span class="lv-job-pay">$17/hr</span></span>
+        </a>
+        <a class="lv-job-card" href="https://leveillestaffing.com/careers/apply?job=job-018" target="_blank" rel="noopener noreferrer" aria-label="Apply: Furniture Installer, $18–$28/hr">
+          <img src="job-018.jpg" alt="" loading="lazy">
+          <span class="lv-job-info"><strong class="lv-job-title">Furniture Installer</strong><span class="lv-job-pay">$18–$28/hr</span></span>
+        </a>
+        <a class="lv-job-card" href="https://leveillestaffing.com/careers/apply?job=job-019" target="_blank" rel="noopener noreferrer" aria-label="Apply: Non-CDL Driver, $18–$28/hr">
+          <img src="job-019.jpg" alt="" loading="lazy">
+          <span class="lv-job-info"><strong class="lv-job-title">Non-CDL Driver</strong><span class="lv-job-pay">$18–$28/hr</span></span>
+        </a>
+        <a class="lv-job-card" href="https://leveillestaffing.com/careers/apply?job=job-020" target="_blank" rel="noopener noreferrer" aria-label="Apply: Non-Driver Mover, $17–$21/hr">
+          <img src="job-020.jpg" alt="" loading="lazy">
+          <span class="lv-job-info"><strong class="lv-job-title">Non-Driver Mover</strong><span class="lv-job-pay">$17–$21/hr</span></span>
+        </a>
+      </nav>
+      <a class="lv-jobs-more" href="https://leveillestaffing.com/careers" target="_blank" rel="noopener noreferrer"><span data-text="jobsMore">See all openings</span><i data-lucide="arrow-up-right" aria-hidden="true"></i></a>
+    </section>
     <div class="lv-help">
       <p><strong data-text="help">Have a question?</strong><span data-text="helpSub">Call LEVEILLE Staffing</span></p>
       <a class="lv-call" data-link="phone" href="tel:+19804437381"><i data-lucide="phone" aria-hidden="true"></i><span data-text="call">Call us</span></a>
@@ -226,6 +267,8 @@ Las fuentes y los iconos se cargan de proveedores publicos cuando hay internet.
           "govRegistered": "Registered vendor: SAM.gov · NC eVP · City of Charlotte · Mecklenburg County · CMS",
           "socials": "Follow LEVEILLE",
           "whatsapp": "WhatsApp channel",
+          "jobsTitle": "Open Positions",
+          "jobsMore": "See all openings",
           "status": "Language changed to English"
         },
         "es": {
@@ -250,6 +293,8 @@ Las fuentes y los iconos se cargan de proveedores publicos cuando hay internet.
           "govRegistered": "Proveedor registrado: SAM.gov · NC eVP · City of Charlotte · Mecklenburg County · CMS",
           "socials": "Síguenos en nuestras redes",
           "whatsapp": "Canal de WhatsApp",
+          "jobsTitle": "Puestos disponibles",
+          "jobsMore": "Ver todas las vacantes",
           "status": "Idioma cambiado a español"
         },
         "pt": {
@@ -274,6 +319,8 @@ Las fuentes y los iconos se cargan de proveedores publicos cuando hay internet.
           "govRegistered": "Fornecedor registrado: SAM.gov · NC eVP · City of Charlotte · Mecklenburg County · CMS",
           "socials": "Siga a LEVEILLE nas redes",
           "whatsapp": "Canal do WhatsApp",
+          "jobsTitle": "Vagas abertas",
+          "jobsMore": "Ver todas as vagas",
           "status": "Idioma alterado para português"
         },
         "ru": {
@@ -298,6 +345,8 @@ Las fuentes y los iconos se cargan de proveedores publicos cuando hay internet.
           "govRegistered": "Зарегистрированный поставщик: SAM.gov · NC eVP · City of Charlotte · Mecklenburg County · CMS",
           "socials": "LEVEILLE в социальных сетях",
           "whatsapp": "Канал WhatsApp",
+          "jobsTitle": "Открытые вакансии",
+          "jobsMore": "Смотреть все вакансии",
           "status": "Язык изменён на русский"
         },
         "ht": {
@@ -322,6 +371,8 @@ Las fuentes y los iconos se cargan de proveedores publicos cuando hay internet.
           "govRegistered": "Founisè enskri: SAM.gov · NC eVP · City of Charlotte · Mecklenburg County · CMS",
           "socials": "Swiv LEVEILLE sou rezo sosyal",
           "whatsapp": "Kanal WhatsApp",
+          "jobsTitle": "Pozisyon disponib",
+          "jobsMore": "Gade tout pozisyon yo",
           "status": "Lang lan chanje an kreyòl ayisyen"
         },
         "hi": {
@@ -346,6 +397,8 @@ Las fuentes y los iconos se cargan de proveedores publicos cuando hay internet.
           "govRegistered": "पंजीकृत विक्रेता: SAM.gov · NC eVP · City of Charlotte · Mecklenburg County · CMS",
           "socials": "सोशल मीडिया पर LEVEILLE से जुड़ें",
           "whatsapp": "WhatsApp चैनल",
+          "jobsTitle": "खुली नौकरियां",
+          "jobsMore": "सभी नौकरियां देखें",
           "status": "भाषा हिन्दी में बदल दी गई है"
         }
       };
